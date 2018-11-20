@@ -8,6 +8,10 @@ input_file = open("i_mem.txt", "r")
 output_file = open("d_mem_output.txt","w")
 print("add, sub, xor, addi, beq, bne, slt, lw, sw")
 instList = []
+multi_cycles = 0
+multic_3 = 0
+multic_4 = 0
+multic_5 = 0
 count = 0
 for code in input_file:
     line = code.replace("\t", "")
@@ -29,11 +33,13 @@ while(pc < len(instList)):
         
     #r-type
     if(line[0:6] == '000000'):
+        multi_cycles += 4 #rtype have 4 cycles
         #add
         if(line[26:32] == '100000'):
             #rd = rs + rt
             r[int(line[16:21],2)] = r[int(line[6:11],2)] + r[int(line[11:16],2)]
             pc = pc + 1
+           
         #sub
         elif(line[26:32] == '100010'):
             #rd = rs - rt
@@ -55,12 +61,14 @@ while(pc < len(instList)):
             
     #addi
     elif(line[0:6] == '001000'):
+        multi_cycles += 4
         #rt = rs + imm
         imm = twos_convert(line)
         r[int(line[11:16],2)] = r[int(line[6:11],2)] + imm
         pc = pc + 1
     #beq
     elif(line[0:6] == '000100'):
+        multi_cycles += 3
         #if(rs == rt) then pc = imm + pc
         temp_pc = pc
         imm = twos_convert(line)
@@ -73,6 +81,7 @@ while(pc < len(instList)):
             break
     #bne
     elif(line[0:6] == '000101'):
+        multi_cycles += 3
         #if(rs != rt) then pc = imm + pc
         temp_pc = pc
         imm = twos_convert(line)
@@ -84,12 +93,14 @@ while(pc < len(instList)):
             break
     #lw
     elif(line[0:6] == '100011'):
+        multi_cycles += 5
         #rt = MEM[rs + imm]
         offset = int((r[int(line[6:11],2)] + int(line[16:32],2) - 8192)/4)
         r[int(line[11:16],2)] = memList[offset]
         pc = pc + 1
     #sw
     elif(line[0:6] == '101011'):
+        multi_cycles += 4
         #MEM[rs + imm] = rt
         offset = int((r[int(line[6:11],2)] + int(line[16:32],2) - 8192)/4)
         memList[offset] = r[int(line[11:16],2)]
