@@ -1,3 +1,9 @@
+def twos_convert(line):
+    if (line[16] == '1'):
+            return (-1*(0b1111111111111111 - int(line[16:32], 2) + 1))
+    else:
+            return int(line[16:32], 2)
+    
 input_file = open("i_mem.txt", "r")
 output_file = open("d_mem_output.txt","w")
 print("add, sub, xor, addi, beq, bne, slt, lw, sw")
@@ -39,7 +45,7 @@ while(pc < len(instList)):
             r[int(line[16:21],2)] = r[int(line[6:11],2)] ^ r[int(line[11:16],2)]
             pc = pc + 1
         #slt
-        elif(line[26:32] == '100110'):
+        elif(line[26:32] == '101010'):
             #rd = 1 if(rs < rt)
             if (r[int(line[6:11],2)] < r[int(line[11:16],2)]):
                 r[int(line[16:21],2)] = 1
@@ -50,32 +56,42 @@ while(pc < len(instList)):
     #addi
     elif(line[0:6] == '001000'):
         #rt = rs + imm
-        r[int(line[11:16],2)] = r[int(line[6:11],2)] + int(line[16:32],2)
+        imm = twos_convert(line)
+        r[int(line[11:16],2)] = r[int(line[6:11],2)] + imm
         pc = pc + 1
     #beq
     elif(line[0:6] == '000100'):
         #if(rs == rt) then pc = imm + pc
+        temp_pc = pc
+        imm = twos_convert(line)
         if(r[int(line[6:11],2)] is r[int(line[11:16],2)]):
-            pc = pc + int(line[16:32],2)
+            pc = pc + imm + 1
         else:
             pc = pc + 1
+        if pc is temp_pc:
+            count = count + 1
+            break
     #bne
     elif(line[0:6] == '000101'):
         #if(rs != rt) then pc = imm + pc
+        temp_pc = pc
+        imm = twos_convert(line)
         if(r[int(line[6:11],2)] != r[int(line[11:16],2)]):
-            pc = pc + int(line[16:32],2)
+            pc = pc + imm + 1
         else:
             pc = pc + 1
+        if pc is temp_pc:
+            break
     #lw
     elif(line[0:6] == '100011'):
         #rt = MEM[rs + imm]
-        offset = r[int(line[6:11],2)] + int(line[16:32],2) - 8192
+        offset = int((r[int(line[6:11],2)] + int(line[16:32],2) - 8192)/4)
         r[int(line[11:16],2)] = memList[offset]
         pc = pc + 1
     #sw
     elif(line[0:6] == '101011'):
         #MEM[rs + imm] = rt
-        offset = r[int(line[6:11],2)] + int(line[16:32],2) - 8192
+        offset = int((r[int(line[6:11],2)] + int(line[16:32],2) - 8192)/4)
         memList[offset] = r[int(line[11:16],2)]
         pc = pc + 1  
     else:
