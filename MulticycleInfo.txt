@@ -1,0 +1,17 @@
+Instruction 0: addi - 4 cycles 
+Instruction 1: addi - 4 cycles 
+Instruction 2: add - 4 cycles 
+Instruction 3: slt - 4 cycles 
+Instruction 4: beq - 3 cycles 
+Instruction 5: add - 4 cycles 
+Instruction 6: slt - 4 cycles 
+Instruction 7: beq - 3 cycles 
+Instruction 8: add - 4 cycles 
+Instruction 9: slt - 4 cycles 
+Instruction 10: beq - 3 cycles 
+Instruction 11: add - 4 cycles 
+Instruction 12: slt - 4 cycles 
+Instruction 13: beq - 3 cycles 
+Instruction 14: beq - 3 cycles 
+
+Total cycles in Multicycle: 55
