@@ -18,7 +18,7 @@ for code in input_file:
     if (line == "\n"):              # empty lines ignored
         continue
     line = line.replace("\n","")
-    line = format(int(line,16),"032b")
+    line = format(int(line,16), "032b")
     instList.append(line)
     
 input_file.close()
