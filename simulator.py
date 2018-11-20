@@ -5,7 +5,6 @@ def twos_convert(line):
             return int(line[16:32], 2)
     
 input_file = open("i_mem.txt", "r")
-output_file = open("d_mem_output.txt","w")
 print("add, sub, xor, addi, beq, bne, slt, lw, sw")
 instList = []
 multi_cycles = 0
@@ -110,21 +109,5 @@ while(pc < len(instList)):
         break;
     count = count + 1
 
-for j in memList:
-    j = format(j, '016b')
-    output_file.write(j + '\n')
-    
-output_stats = open("stat_mem.txt","w")
-r[0] = repr(r[0])
-r[1] = repr(r[1])
-r[2] = repr(r[2])
-r[3] = repr(r[3])
-output_stats.write("r0 = " + r[0] + '\n')
-output_stats.write("r1 = " + r[1] + '\n')
-output_stats.write("r2 = " + r[2] + '\n')
-output_stats.write("r3 = " + r[3] + '\n')
-output_stats.write("DIC count = " + repr(count) + '\n')
-output_stats.close()   
+
 print("Final DIC count is: {}".format(count))
-input_file.close()
-output_file.close()
