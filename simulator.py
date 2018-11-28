@@ -25,7 +25,8 @@ dm2 = [0, 0, 0, 0], [0, 0, 0, 0]
 dm4 = [0, 0], [0, 0], [0, 0], [0, 0]
 fa4 = [0, 0], [0, 0], [0, 0], [0, 0]
 fa8 = [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]
-dm2bit_tag = 0
+dm2blkindex = 0
+dm2tag = 0
 
 for code in input_file:
    line = code.replace("\t", "")
@@ -199,9 +200,10 @@ while(pc < len(instList)):
        r[int(line[11:16],2)] = memList[offset]
 
        #cache behavior
-       dm2bit_tag = int(offset) % 8192 % 4
-       c_file.write("\nBit tag: " + repr(bin(dm2bit_tag)))
-       if (offset )
+       c_file.write("\nAccessing memory address: " + repr(hex(offset + 0x2000)))
+       dm2blkindex = offset + 0x2000
+       c_file.write("\nTag: " + repr(bin(dm2blkindex)[10:12]))
+       #if (offset )
 
        m_file.write("Instruction " +repr(count)+ ": lw - 5 cycles \n")
        pc = pc + 1
