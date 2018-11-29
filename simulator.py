@@ -20,14 +20,22 @@ lw_detector = False
 hazard_c = 0
 delay = 0
 
+mem_size = 1024
+memList = [0 for i in range(mem_size)]
+r = [0,0,0,0,0,0,0,0]
+pc = 0
+
 # Cache variables
-dm2 = [0, 0, 0, 0], [0, 0, 0, 0]
-dm4 = [0, 0], [0, 0], [0, 0], [0, 0]
-fa4 = [0, 0], [0, 0], [0, 0], [0, 0]
-fa8 = [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]
-dm2blkindex = 0
+i = 0
+j = -1
+address = [0 for i in range(mem_size)]
+dm2blkindex = [-3 for i in range(mem_size)]
+dm2blkindex[-1] = -3
 dm2validbit = 0
-dm2tag = 0
+dm2tag = [-3 for i in range(mem_size)]
+dm2hit = 0
+dm2miss = 0
+
 
 for code in input_file:
    line = code.replace("\t", "")
@@ -39,10 +47,6 @@ for code in input_file:
    instList.append(line)
   
 input_file.close()
-mem_size = 1024
-memList = [0 for i in range(mem_size)]
-r = [0,0,0,0,0,0,0,0]
-pc = 0
 
 while(pc < len(instList)):
    line = instList[pc]
@@ -196,15 +200,25 @@ while(pc < len(instList)):
            delay += 1
 
        if ((hazard[0] is int(line[6:11],2)) or (hazard[1] is (int(line[6:11],2)))):
-           p_file.write("Instruction "+repr(count)+" hazard detected with lw\n")
+            p_file.write("Instruction "+repr(count)+" hazard detected with lw\n")
        offset = int((r[int(line[6:11],2)] + int(line[16:32],2) - 8192)/4)
        r[int(line[11:16],2)] = memList[offset]
 
        #cache behavior
        c_file.write("\nAccessing memory address: " + repr(hex(offset * 4 + 0x2000)))
-       dm2blkindex = offset * 4 + 0x2000
-       c_file.write("\nBlock Index: " + repr(format(dm2blkindex, '#018b')[13:14]))
-       c_file.write("\nTag: " + repr(format(dm2blkindex, '#018b')[2:13]))
+       address[i] = offset * 4 + 0x2000
+       while (dm2blkindex[i] != dm2blkindex[j]):
+          j-=1
+       if (dm2tag[i] == dm2tag[j]):
+          c_file.write("\n     Hit!")
+       else:
+          c_file.write("\n     Miss!")
+       dm2blkindex  = format(address[i], '#018b')[13:14]
+       dm2tag = format(address[i], '#018b')[2:13]
+       c_file.write("\nBlock Index: " + repr(dm2blkindex))
+       c_file.write("\nTag: " + repr(dm2tag))
+       i+=1
+       j=i-1
 
        m_file.write("Instruction " +repr(count)+ ": lw - 5 cycles \n")
        pc = pc + 1
