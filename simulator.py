@@ -1,9 +1,30 @@
+s_file = open("Sa_debug.txt", "w")
 def twos_convert(line):
    if (line[16] == '1'):
            return (-1*(0b1111111111111111 - int(line[16:32], 2) + 1))
    else:
            return int(line[16:32], 2)
-  
+ 
+def sa_cache(off, sa_1way, sa_2way, sa_tags):
+    memblock = format((off * 4 + 0x2000), "02b")
+    s_file.write("Accessing: " + hex(off * 4 + 0x2000))
+    tag = int(memblock[0:11], 2)
+    s_index = int(memblock[11:13], 2)
+   # s_offset = int(memblock[13:14], 2)
+    if(sa_tags[s_index][0] == tag and sa_tags[s_index][0] != -1):
+        s_file.write("Hit. Tag bit: " + tag + "Set " + repr(s_index))
+    elif (sa_tags[s_index][1] == tag and sa_tags[s_index][1] != -1):
+        s_file.write("Hit. Tag bit: " + tag + "Set " + repr(s_index))
+    else:
+        s_file.write("Miss. Updating cache\n")
+        if (sa_tags[s_index][0] == -1):
+            s_file.write("Writing to set: " + repr(s_index))
+            sa_1way[s_index][0] = memList[off]
+            sa_1way[s_index][1] = memList[off+1]
+        elif (sa_tags[s_index][1] == -1):
+            sa_2way[s_index][0] = memList[off]
+            sa_2way[s_index][1] = memList[off+1]
+            
 input_file = open("i_mem.txt", "r")
 m_file = open("MulticycleInfo.txt","w")
 p_file = open("PipelineInfo.txt","w")
@@ -19,6 +40,12 @@ hazard = [-1,-1]    # initialized to -1, -1 to represent null registers in the b
 lw_detector = False
 hazard_c = 0
 delay = 0
+
+#SA variables
+test = [[]]
+sa_data_1way = [[0 for x in range(2)] for y in range(4)]
+sa_data_2way = [[0 for x in range(2)] for y in range(4)]
+sa_valid_tag = [[-1 for x in range(2)] for y in range(4)]
 
 mem_size = 1024
 memList = [0 for i in range(mem_size)]
@@ -220,6 +247,10 @@ while(pc < len(instList)):
        i+=1
        j=i-1
 
+         #sa cache
+       sa_cache(offset, sa_data_1way, sa_data_2way, sa_valid_tag)
+      
+      
        m_file.write("Instruction " +repr(count)+ ": lw - 5 cycles \n")
        pc = pc + 1
        lw_detector = True
@@ -265,5 +296,5 @@ print("Total number of cycles: " + repr(count + 4 + delay))
 c_file.close()
 p_file.close()
 m_file.close()
-
+s_file.close()
 
