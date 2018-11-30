@@ -1,0 +1,364 @@
+
+Accessing memory address using DM Cache (4 blocks): '0x2004'
+     Block 0 is being accessed.
+     Miss!
+     Valid bit for block 0 has been updated to 1.
+     Block 0 has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2008'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x200c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2008'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x200c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2010'
+     Block 1 is being accessed.
+     Miss!
+     Valid bit for block 1 has been updated to 1.
+     Block 1 has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x200c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2010'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2014'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2010'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2014'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2018'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2014'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2018'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x201c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2018'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x201c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2020'
+     Block 0 is being accessed.
+     Miss!
+     Valid bit for block 0 has been updated to 1.
+     Block 0 has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x201c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000000'
+
+Accessing memory address using DM Cache (4 blocks): '0x2020'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2024'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2020'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2024'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2028'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2024'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2028'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x202c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2028'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x202c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2030'
+     Block 1 is being accessed.
+     Miss!
+     Valid bit for block 1 has been updated to 1.
+     Block 1 has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x202c'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2030'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2034'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2030'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2034'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2038'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2034'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2038'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x203c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2038'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x203c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2040'
+     Block 0 is being accessed.
+     Miss!
+     Valid bit for block 0 has been updated to 1.
+     Block 0 has been updated.
+     Block Index: '0'
+     Tag: '100000010'
+
+Accessing memory address using DM Cache (4 blocks): '0x203c'
+     Block 1 is being accessed.
+     Hit!
+     Valid bit for block 1 has been updated to 1.
+     No block has been updated.
+     Block Index: '1'
+     Tag: '100000001'
+
+Accessing memory address using DM Cache (4 blocks): '0x2040'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000010'
+
+Accessing memory address using DM Cache (4 blocks): '0x2044'
+     Block 0 is being accessed.
+     Hit!
+     Valid bit for block 0 has been updated to 1.
+     No block has been updated.
+     Block Index: '0'
+     Tag: '100000010'
+
+Total hits = 40
+Total misses = 5
+Hit rate = 0.8888888888888888

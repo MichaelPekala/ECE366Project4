@@ -3,7 +3,7 @@ def twos_convert(line):
            return (-1*(0b1111111111111111 - int(line[16:32], 2) + 1))
    else:
            return int(line[16:32], 2)
-
+stats_file = open("Stats.txt", "w")
 input_file = open("i_mem.txt", "r")
 m_file = open("MulticycleInfo.txt","w")
 p_file = open("PipelineInfo.txt","w")
@@ -232,7 +232,7 @@ while(pc < len(instList)):
        r[int(line[11:16],2)] = memList[offset]
 
        #cache behavior
-       #DM Cache (4 blocks)
+       #DM Cache (2 blocks)
        j= i-1
        c_file.write("\nAccessing memory address using DM Cache (4 blocks): " + repr(hex(offset * 4 + 0x2000)))
        address[i] = offset * 4 + 0x2000
@@ -246,7 +246,7 @@ while(pc < len(instList)):
        if (dm2tag[i] == dm2tag[j]):
            dm2hit+=1
            c_file.write("\n     Hit!")
-           c_file.write("\n     Valid bit for block " +repr(dm2blkindex[i])+ " has been updated to 0.")
+           c_file.write("\n     Valid bit for block " +repr(dm2blkindex[i])+ " has been updated to 1.")
            c_file.write("\n     No block has been updated.")
        else:
            dm2miss+=1
@@ -256,7 +256,7 @@ while(pc < len(instList)):
        c_file.write("\n     Block Index: " + repr(bin(dm2blkindex[i])[2:]))
        c_file.write("\n     Tag: " + repr(bin(dm2tag[i])[2:])+ "\n")
 
-       #DM Cache (2 blocks)
+       #DM Cache (4 blocks)
        j= i-1
        dm4_file.write("\nAccessing memory address using DM Cache (2 blocks): " + repr(hex(offset * 4 + 0x2000)))
        address[i] = offset * 4 + 0x2000
@@ -270,7 +270,7 @@ while(pc < len(instList)):
        if (dm4tag[i] == dm4tag[j]):
            dm4hit+=1
            dm4_file.write("\n     Hit!")
-           dm4_file.write("\n     Valid bit for block " +repr(dm4blkindex[i])+ " has been updated to 0.")
+           dm4_file.write("\n     Valid bit for block " +repr(dm4blkindex[i])+ " has been updated to 1.")
            dm4_file.write("\n     No block has been updated.")
        else:
            dm4miss+=1
@@ -283,18 +283,34 @@ while(pc < len(instList)):
        #FA Cache
        j= i-1
        fa_file.write("\nAccessing memory address using FA Cache: " + repr(hex(offset * 4 + 0x2000)))
+       
        address[i] = offset * 4 + 0x2000
-       fablkindex[i]  = int(format(address[i], '#018b')[13:15],2)
-       fatag[i] = int(format(address[i], '#018b')[2:13],2)
+       fablkindex[i]  = int(format(address[i], '#018b')[15:17],2)
+       fatag[i] = int(format(address[i], '#018b')[2:15],2)
        if (fatag[i] == fatag[j]):
            fahit+=1
            fa_file.write("\n     Hit!")
-           fa_file.write("\n     Valid bit has been updated to 0.")
+           fa_file.write("\n     Valid bit has been updated to 1.")
        else:
            famiss+=1
            fa_file.write("\n     Miss!")
            fa_file.write("\n     Valid bit has been updated to 1.")
        fa_file.write("\n     Tag: " + repr(bin(fatag[i])[2:])+ "\n")
+       
+       if (hex(offset * 4 + 0x2000) is 0x2018):
+           offset = offset+4
+           address[i] = offset * 4 + 0x2000
+           fablkindex[i]  = int(format(address[i], '#018b')[15:17],2)
+           fatag[i] = int(format(address[i], '#018b')[2:15],2)
+           if (fatag[i] == fatag[j]):
+               fahit+=1
+               fa_file.write("\n     Hit!")
+               fa_file.write("\n     Valid bit has been updated to 1.")
+           else:
+               famiss+=1
+               fa_file.write("\n     Miss!")
+               fa_file.write("\n     Valid bit has been updated to 1.")
+           fa_file.write("\n     Tag: " + repr(bin(fatag[i])[2:])+ "\n")
        
        #SA Cache
        j= i-1
@@ -310,7 +326,7 @@ while(pc < len(instList)):
        if (satag[i] == satag[j]):
            sahit+=1
            sa_file.write("\n     Hit!")
-           sa_file.write("\n     Valid bit for block " +repr(sablkindex[i])+ " has been updated to 0.")
+           sa_file.write("\n     Valid bit for block " +repr(sablkindex[i])+ " has been updated to 1.")
            sa_file.write("\n     No block has been updated.")
        else:
            samiss+=1
@@ -380,9 +396,21 @@ m_file.write("\n" + "Total cycles in Multicycle: " + repr(multi_cycles))
 print("\nPipelined CPU Information ")
 print("Number of delays: " + repr(delay))
 print("Total number of cycles: " + repr(count + 4 + delay))
+
+#Run end stats
+stats_file.write("Pc: " + repr(hex(pc * 4)) + "\n")
+stats_file.write("$1: " + repr(r[1]) + "\n")
+stats_file.write("$2: " + repr(r[2]) + "\n")
+stats_file.write("$3: " + repr(r[3]) + "\n")
+stats_file.write("$4: " + repr(r[4]) + "\n")
+stats_file.write("$5: " + repr(r[5]) + "\n")
+stats_file.write("$6: " + repr(r[6]) + "\n")
+stats_file.write("$7: " + repr(r[7]) + "\n")
+stats_file.write("DIC: " + repr(count) + "\n")
 c_file.close()
 p_file.close()
 m_file.close()
 dm4_file.close()
 fa_file.close()
 sa_file.close()
+stats_file.close()

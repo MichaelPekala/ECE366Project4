@@ -1,0 +1,229 @@
+
+Accessing memory address using FA Cache: '0x2004'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000000'
+
+Accessing memory address using FA Cache: '0x2008'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000001'
+
+Accessing memory address using FA Cache: '0x200c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000001'
+
+Accessing memory address using FA Cache: '0x2008'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000001'
+
+Accessing memory address using FA Cache: '0x200c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000001'
+
+Accessing memory address using FA Cache: '0x2010'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x200c'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000001'
+
+Accessing memory address using FA Cache: '0x2010'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x2014'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x2010'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x2014'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x2018'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x2014'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000010'
+
+Accessing memory address using FA Cache: '0x2018'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x201c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x2018'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x201c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x2020'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x201c'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000011'
+
+Accessing memory address using FA Cache: '0x2020'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x2024'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x2020'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x2024'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x2028'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x2024'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000100'
+
+Accessing memory address using FA Cache: '0x2028'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x202c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x2028'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x202c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x2030'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x202c'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000101'
+
+Accessing memory address using FA Cache: '0x2030'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x2034'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x2030'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x2034'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x2038'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x2034'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000110'
+
+Accessing memory address using FA Cache: '0x2038'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x203c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x2038'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x203c'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x2040'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000001000'
+
+Accessing memory address using FA Cache: '0x203c'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000000111'
+
+Accessing memory address using FA Cache: '0x2040'
+     Miss!
+     Valid bit has been updated to 1.
+     Tag: '10000001000'
+
+Accessing memory address using FA Cache: '0x2044'
+     Hit!
+     Valid bit has been updated to 1.
+     Tag: '10000001000'
+
+Total hits = 22
+Total misses = 23
+Hit rate = 0.4888888888888889
