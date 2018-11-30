@@ -253,8 +253,8 @@ while(pc < len(instList)):
            c_file.write("\n     Miss!")
            c_file.write("\n     Valid bit for block " +repr(dm2blkindex[i])+ " has been updated to 1.")
            c_file.write("\n     Block " +repr(dm2blkindex[i])+ " has been updated.")
-       c_file.write("\n     Block Index: " + repr(dm2blkindex[i]))
-       c_file.write("\n     Tag: " + repr(dm2tag[i])+ "\n")
+       c_file.write("\n     Block Index: " + repr(bin(dm2blkindex[i])[2:]))
+       c_file.write("\n     Tag: " + repr(bin(dm2tag[i])[2:])+ "\n")
 
        #DM Cache (2 blocks)
        j= i-1
@@ -277,8 +277,8 @@ while(pc < len(instList)):
            dm4_file.write("\n     Miss!")
            dm4_file.write("\n     Valid bit for block " +repr(dm4blkindex[i])+ " has been updated to 1.")
            dm4_file.write("\n     Block " +repr(dm4blkindex[i])+ " has been updated.")
-       dm4_file.write("\n     Block Index: " + repr(dm4blkindex[i]))
-       dm4_file.write("\n     Tag: " + repr(dm4tag[i])+ "\n")
+       dm4_file.write("\n     Block Index: " + repr(bin(dm4blkindex[i])[2:]))
+       dm4_file.write("\n     Tag: " + repr(bin(dm4tag[i])[2:])+ "\n")
        
        #FA Cache
        j= i-1
@@ -294,7 +294,7 @@ while(pc < len(instList)):
            famiss+=1
            fa_file.write("\n     Miss!")
            fa_file.write("\n     Valid bit has been updated to 1.")
-       fa_file.write("\n     Tag: " + repr(fatag[i])+ "\n")
+       fa_file.write("\n     Tag: " + repr(bin(fatag[i])[2:])+ "\n")
        
        #SA Cache
        j= i-1
@@ -317,8 +317,8 @@ while(pc < len(instList)):
            sa_file.write("\n     Miss!")
            sa_file.write("\n     Valid bit for block " +repr(sablkindex[i])+ " has been updated to 1.")
            sa_file.write("\n     Block " +repr(sablkindex[i])+ " has been updated.")
-       sa_file.write("\n     Block Index: " + repr(sablkindex[i]))
-       sa_file.write("\n     Tag: " + repr(satag[i])+ "\n")
+       sa_file.write("\n     Block Index: " + repr(bin(sablkindex[i])[2:]))
+       sa_file.write("\n     Tag: " + repr(bin(satag[i])[2:])+ "\n")
        
        m_file.write("Instruction " +repr(count)+ ": lw - 5 cycles \n")
        pc = pc + 1
